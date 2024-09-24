@@ -8,7 +8,7 @@ namespace GD
     /// <see cref="https://www.programmersought.com/article/71125964072/"/>
     public class ToggleInspectorLock
     {
-        [MenuItem("Tools/DkIT/UI/Toggle Inspector lock %q")]  //% = CTRL, # = SHIFT, q = shortcut alphanumberic key
+        [MenuItem("Tools/DkIT/UI/Toggle Inspector lock #q")]  //% = CTRL, # = SHIFT, q = shortcut alphanumberic key
         public static void Toggle()
         {
             var inspectorType = typeof(Editor).Assembly.GetType("UnityEditor.InspectorWindow");
