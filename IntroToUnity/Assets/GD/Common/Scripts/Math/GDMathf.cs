@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace GD
 {
@@ -16,6 +17,11 @@ namespace GD
             if (angle < -360f) angle += 360f;
             if (angle > 360f) angle -= 360f;
             return Mathf.Clamp(angle, min, max);
+        }
+
+        internal static float ToRadians(float phaseAngleDegrees)
+        {
+            throw new NotImplementedException();
         }
     }
 }

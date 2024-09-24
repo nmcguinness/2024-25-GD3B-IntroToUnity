@@ -37,7 +37,8 @@ public class SineDisplaceBehaviour : MonoBehaviour
     private void Update()
     {
         elapsedTime += Time.deltaTime; //16ms for 60HZ display
-        var magnitude = amplitude * Mathf.Sin((elapsedTime * frequencyScale) + phaseAngleDegrees);
+        var magnitude = amplitude * Mathf.Sin((elapsedTime * frequencyScale)
+            + GD.GDMathf.ToRadians(phaseAngleDegrees));
         target.transform.localPosition = originalPosition + direction * magnitude;
     }
 }
