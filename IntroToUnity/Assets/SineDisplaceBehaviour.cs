@@ -9,6 +9,7 @@ public class SineDisplaceBehaviour : MonoBehaviour
     // This function is called every fixed framerate frame, if the MonoBehaviour is enabled
     private void FixedUpdate()
     {
+        //target.transform.Translate();
         //Mathf.Sin()
         //Time.time
         //Amplitude, frequency, direction
