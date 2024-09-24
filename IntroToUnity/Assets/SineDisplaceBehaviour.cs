@@ -10,9 +10,8 @@ public class SineDisplaceBehaviour : MonoBehaviour
     [Range(0f, 5f)]
     private float amplitude = 1;
 
+    [SerializeField]
     private Vector3 direction = Vector3.up;
-
-    //phase and angular speed
 
     private void Update()
     {
