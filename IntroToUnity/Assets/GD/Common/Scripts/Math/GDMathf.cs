@@ -19,9 +19,16 @@ namespace GD
             return Mathf.Clamp(angle, min, max);
         }
 
-        internal static float ToRadians(float phaseAngleDegrees)
+        /// <summary>
+        /// Converts degrees to radians
+        /// </summary>
+        /// <param name="degrees"></param>
+        /// <returns></returns>
+        internal static float ToRadians(float degrees)
         {
-            throw new NotImplementedException();
+            //degrees %= 360f;
+            //180 degrees = Mathf.PI
+            return Mathf.PI * degrees / 180f;
         }
     }
 }
