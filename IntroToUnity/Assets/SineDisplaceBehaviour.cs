@@ -19,6 +19,10 @@ public class SineDisplaceBehaviour : MonoBehaviour
     [Range(0f, 25f)]
     private float frequencyScale = 1f;
 
+    [SerializeField]
+    [Range(-180, 180)]
+    private float phaseAngleDegrees = 0f;
+
     private Vector3 originalPosition;
     private float elapsedTime;
 
@@ -33,7 +37,7 @@ public class SineDisplaceBehaviour : MonoBehaviour
     private void Update()
     {
         elapsedTime += Time.deltaTime; //16ms for 60HZ display
-        var magnitude = amplitude * Mathf.Sin(elapsedTime * frequencyScale);
+        var magnitude = amplitude * Mathf.Sin((elapsedTime * frequencyScale) + phaseAngleDegrees);
         target.transform.localPosition = originalPosition + direction * magnitude;
     }
 }
