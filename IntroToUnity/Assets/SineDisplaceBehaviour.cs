@@ -15,18 +15,25 @@ public class SineDisplaceBehaviour : MonoBehaviour
     [SerializeField]
     private Vector3 direction = Vector3.up;
 
+    [SerializeField]
+    [Range(0f, 25f)]
+    private float frequencyScale = 1f;
+
     private Vector3 originalPosition;
+    private float elapsedTime;
 
     #endregion Fields
 
     private void Start()
     {
+        direction = direction.normalized;
         originalPosition = target.transform.localPosition;
     }
 
     private void Update()
     {
-        var magnitude = amplitude * Mathf.Sin(Time.time);
+        elapsedTime += Time.deltaTime; //16ms for 60HZ display
+        var magnitude = amplitude * Mathf.Sin(elapsedTime * frequencyScale);
         target.transform.localPosition = originalPosition + direction * magnitude;
     }
 }
