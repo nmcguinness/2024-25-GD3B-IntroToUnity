@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c96954cbc438f740b294cb6a62584ab, type: 3}
   m_Name: Cube - Direction - Up
   m_EditorClassIdentifier: 
-  Description: 
-  value: {x: 0, y: 0, z: 0}
+  Description: Defines sine direction
+  value: {x: 1, y: 1, z: 0}

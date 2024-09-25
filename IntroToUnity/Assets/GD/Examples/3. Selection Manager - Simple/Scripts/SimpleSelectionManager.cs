@@ -1,4 +1,3 @@
-using GD;
 using UnityEngine;
 
 public class SimpleSelectionManager : MonoBehaviour
@@ -37,6 +36,8 @@ public class SimpleSelectionManager : MonoBehaviour
             {
                 //change the moused over thing
                 Debug.Log(currentSelection.position.ToString());
+
+                //Play audio clip
             }
         }
     }

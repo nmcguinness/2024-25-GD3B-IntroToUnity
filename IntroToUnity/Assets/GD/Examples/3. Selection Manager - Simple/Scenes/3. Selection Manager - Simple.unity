@@ -570,7 +570,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1008979822}
   m_Layer: 0
-  m_Name: Pickables
+  m_Name: '*** Pickables ***'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -711,7 +711,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1133671283}
   m_Layer: 0
-  m_Name: Environment
+  m_Name: '*** Environment ***'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -743,7 +743,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1710373929}
   m_Layer: 0
-  m_Name: Managers
+  m_Name: '*** Managers ***'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -762,10 +762,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1797908651}
+  - {fileID: 1923223961}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1797908650
+--- !u!1 &1923223960
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -773,7 +773,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1797908651}
+  - component: {fileID: 1923223961}
+  - component: {fileID: 1923223962}
   m_Layer: 0
   m_Name: SimpleSelectionManager
   m_TagString: Untagged
@@ -781,13 +782,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1797908651
+--- !u!4 &1923223961
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1797908650}
+  m_GameObject: {fileID: 1923223960}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -796,6 +797,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1710373929}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1923223962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923223960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5559a4608521d944b6eab9377c86a1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectableTag: Selectable
 --- !u!1 &2035824722
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,7 +822,6 @@ GameObject:
   - component: {fileID: 2035824724}
   - component: {fileID: 2035824723}
   - component: {fileID: 2035824726}
-  - component: {fileID: 2035824727}
   - component: {fileID: 2035824728}
   m_Layer: 0
   m_Name: Main Camera
@@ -884,8 +897,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2035824722}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.11604229, y: -0.5994999, z: 0.08839931, w: 0.7869687}
-  m_LocalPosition: {x: 4.5744505, y: 1.6025586, z: -0.99423933}
+  m_LocalRotation: {x: 0.0837868, y: -0.6147974, z: 0.06589973, w: 0.78144807}
+  m_LocalPosition: {x: 3.6718597, y: 0.8635895, z: -1.0093412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -935,18 +948,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!114 &2035824727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2035824722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69212b98c7497f848b03e5c3ee75a43a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2035824728
 MonoBehaviour:
   m_ObjectHideFlags: 0
