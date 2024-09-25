@@ -19,7 +19,9 @@ public class SharedSineDisplaceBehaviour : MonoBehaviour
     //private float amplitude = 1;
 
     [SerializeField]
-    private Vector3 direction = Vector3.up;
+    private Vector3Reference direction;
+
+    //private Vector3 direction = Vector3.up;
 
     [SerializeField]
     [Range(0f, 25f)]
@@ -36,7 +38,6 @@ public class SharedSineDisplaceBehaviour : MonoBehaviour
 
     private void Start()
     {
-        direction = direction.normalized;
         originalPosition = target.transform.localPosition;
     }
 
@@ -45,6 +46,7 @@ public class SharedSineDisplaceBehaviour : MonoBehaviour
         elapsedTime += Time.deltaTime; //16ms for 60HZ display
         var magnitude = amplitude.Value * Mathf.Sin((elapsedTime * frequencyScale)
             + GD.GDMathf.ToRadians(phaseAngleDegrees));
-        target.transform.localPosition = originalPosition + direction * magnitude;
+        target.transform.localPosition = originalPosition
+            + direction.Value * magnitude;
     }
 }
