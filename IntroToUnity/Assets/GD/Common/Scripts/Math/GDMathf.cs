@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace GD
 {
@@ -24,10 +23,10 @@ namespace GD
         /// </summary>
         /// <param name="degrees"></param>
         /// <returns></returns>
-        internal static float ToRadians(float degrees)
+        public static float ToRadians(float degrees)
         {
-            //degrees %= 360f;
-            //180 degrees = Mathf.PI
+            //return degrees * Mathf.Deg2Rad;
+            //180 degs = Mathf.PI
             return Mathf.PI * degrees / 180f;
         }
     }

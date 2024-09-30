@@ -17,7 +17,7 @@ namespace GD
         private static bool generateMyAssets;
         private static bool generateThirdPartyAssets;
 
-        [MenuItem("Tools/DkIT/Utils/Create project folders...")]
+        [MenuItem("Tools/DkIT/Utils/Create project folders")]
         private static void ShowProjectPopup()
         {
             var window = GetWindow(typeof(CreateFolders));
