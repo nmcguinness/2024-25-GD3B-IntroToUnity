@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b979d38bd8aec2343a46d34eff3f53e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tickRateMultiplierType: 1
+  tickRateMultiplierType: 8
   alternateColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &91288944
 GameObject:
@@ -1108,8 +1108,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177436024}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.001765486, y: -0.9284694, z: 0.3713782, w: 0.0044440897}
-  m_LocalPosition: {x: 4.409224, y: 12.040686, z: -1.5458417}
+  m_LocalRotation: {x: 0.2409111, y: 0.04774805, z: -0.011775515, w: 0.96930045}
+  m_LocalPosition: {x: 1.8982637, y: 7.4869623, z: -9.131701}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
