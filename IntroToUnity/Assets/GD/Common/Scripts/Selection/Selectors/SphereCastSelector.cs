@@ -4,10 +4,10 @@ namespace GD.Selection
 {
     public class SphereCastSelector : MonoBehaviour, ISelector
     {
-        private string selectableTag;
-        private float radius;
-        private int maxDistance;
-        private LayerMask layerMask;
+        [SerializeField] private string selectableTag;
+        [SerializeField] private float radius = 1;
+        [SerializeField] private int maxDistance = 10;
+        [SerializeField] private LayerMask layerMask = LayerMask.NameToLayer("Default");
 
         private Transform selection;
         private RaycastHit hitInfo;
