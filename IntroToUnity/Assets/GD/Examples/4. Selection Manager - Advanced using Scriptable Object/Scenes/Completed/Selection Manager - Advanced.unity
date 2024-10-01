@@ -647,9 +647,9 @@ GameObject:
   m_Component:
   - component: {fileID: 499312844}
   - component: {fileID: 499312848}
+  - component: {fileID: 499312851}
   - component: {fileID: 499312846}
   - component: {fileID: 499312850}
-  - component: {fileID: 499312851}
   m_Layer: 0
   m_Name: AdvancedSelectionManager
   m_TagString: Selectable
