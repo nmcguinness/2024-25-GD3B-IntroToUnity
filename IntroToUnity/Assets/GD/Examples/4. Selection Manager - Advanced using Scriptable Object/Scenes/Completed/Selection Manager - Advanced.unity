@@ -726,9 +726,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765a675231b116743802dfb573829904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rayOrigin: {fileID: 474740129419021909}
+  rayOrigin: {fileID: 1451965179}
+  rayLength: 10
   rayColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  rayLength: 4.33
 --- !u!1 &840395017
 GameObject:
   m_ObjectHideFlags: 0
