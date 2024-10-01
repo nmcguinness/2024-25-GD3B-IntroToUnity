@@ -181,7 +181,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cecd477c1a710a74ca102441139a0cca, type: 2}
+  - {fileID: 2100000, guid: e449f27c05d2172468fd7aa26504ca68, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -305,7 +305,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 270f5c529de676543ac61d0723a3a689, type: 2}
+  - {fileID: 2100000, guid: e41a8c9e288a99c4daad55a67ba8e383, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -335,6 +335,191 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 91288944}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &350553034
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1190043726845699179, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.7465456
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190043726845699179, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.0815458
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190043726845699179, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.1368312
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190043726845699179, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190043726845699179, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190043726845699179, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190043726845699179, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190043726845699179, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190043726845699179, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190043726845699179, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: globalScalePercentage
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: enableGlobalFontScaling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[0].text
+      value: 'Example: A low-time resolution TimeTickSystem singleton and subscribe
+        to tick events'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[1].text
+      value: ...this saves us running code too frequently in Update
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[2].text
+      value: '- Usage: Set the TickRateMultiplier in the ColorToggleController in
+        each "Player" object'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[3].size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[3].text
+      value: '- Keywords: Singleton pattern, Observer pattern, optimization'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[1].color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[1].color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[1].color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[3].color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[3].color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[3].color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[3].color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[0].dimensions.x
+      value: 97.42857
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[0].dimensions.y
+      value: 14.571428
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[1].dimensions.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[1].dimensions.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[2].dimensions.x
+      value: 246
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[2].dimensions.y
+      value: 14.571428
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[3].dimensions.x
+      value: 254.85715
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571190380861993430, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: prompts.Array.data[3].dimensions.y
+      value: 14.571428
+      objectReference: {fileID: 0}
+    - target: {fileID: 5577621736917375309, guid: 2001136ed464dbc4aa058efd8a378861,
+        type: 3}
+      propertyPath: m_Name
+      value: Example Info
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2001136ed464dbc4aa058efd8a378861, type: 3}
 --- !u!1 &366567021
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,7 +597,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e449f27c05d2172468fd7aa26504ca68, type: 2}
+  - {fileID: 2100000, guid: 270f5c529de676543ac61d0723a3a689, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -521,7 +706,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e41a8c9e288a99c4daad55a67ba8e383, type: 2}
+  - {fileID: 2100000, guid: cecd477c1a710a74ca102441139a0cca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -994,6 +1179,7 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 350553034}
   - {fileID: 1177436027}
   - {fileID: 1061513320}
   - {fileID: 1100640092}
