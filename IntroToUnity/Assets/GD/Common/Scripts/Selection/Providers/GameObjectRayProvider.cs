@@ -1,33 +1,36 @@
-using GD.Selection;
+using Unity.Android.Types;
 using UnityEngine;
 
-public class GameObjectRayProvider : MonoBehaviour, IRayProvider
+namespace GD.Selection
 {
-    [SerializeField]
-    [Tooltip("Normally set to the in-game player game object")]
-    private GameObject rayOrigin;
-
-    [SerializeField]
-    [Tooltip("Set ray length")]
-    [Range(1, 100)]
-    private float rayLength = 20;
-
-    [SerializeField]
-    [Tooltip("Set ray color (non HDR)")]
-    private Color rayColor = Color.yellow;
-
-    private Ray ray;
-
-    public Ray CreateRay()
+    public class GameObjectRayProvider : MonoBehaviour, IRayProvider
     {
-        ray = new Ray(rayOrigin.transform.position, rayOrigin.transform.forward);
-        return ray;
-    }
+        [SerializeField]
+        private GameObject targetObject;
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = rayColor;
-        Gizmos.DrawLine(ray.origin,
-            ray.origin + rayLength * ray.direction);
+        [Header("Debug Gizmo Properties")]
+        [SerializeField]
+        private Color rayColor = Color.yellow;
+
+        [SerializeField]
+        [Range(0.1f, 100)]
+        private float rayLength = 10;
+
+        [ReadOnly] private Ray ray;
+
+        public Ray CreateRay()
+        {
+            ray = new Ray(targetObject.transform.position, targetObject.transform.forward);
+            return ray;
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = rayColor;
+            Gizmos.DrawLine(targetObject.transform.position,
+                targetObject.transform.position + targetObject.transform.forward * rayLength);
+
+            // Gizmos.DrawWireSphere(targetObject.transform.position, 2);
+        }
     }
 }

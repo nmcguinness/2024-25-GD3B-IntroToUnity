@@ -2,26 +2,29 @@ using UnityEngine;
 
 namespace GD.Selection
 {
-    //BUG - NMCG - Is this working properly?
-    public class SphereCastSelector : MonoBehaviour, ISelector
+    public class SphereCastSelector : BaseCastSelector
     {
-        [SerializeField] private string selectableTag = "Selectable";
-        [SerializeField] private LayerMask layerMask;
-        [SerializeField] private float radius = 1;
-        [SerializeField] private int maxDistance = 10;
+        [Header("Debug Gizmo Properties")]
+        [SerializeField]
+        [ColorUsage(false)]
+        protected Color sphereColor = Color.yellow;
 
-        private Transform selection;
-        private Ray ray;
-        private RaycastHit hitInfo;
+        [SerializeField]
+        [Range(0.1f, 4)]
+        [Tooltip("Define the sensitivity radius of the sphere to allow selection")]
+        private float sphereRadius = 0.5f;
 
-        public void Check(Ray ray)
+        [SerializeField]
+        [Range(0, 1)]
+        [Tooltip("Allows the designer to move the sphere along the length of the ray defined by maxDistance")]
+        private float sphereCastPositionAsProportion;
+
+        public override void Check(Ray ray)
         {
             selection = null;
-            this.ray = ray;
+            this.ray = ray; //cache the ref to the ray for use in the gizmo
 
-            //    RaycastHit[] hitInfoArray = Physics.SphereCastAll(ray, radius);
-
-            if (Physics.SphereCast(ray, radius, out hitInfo, maxDistance, layerMask.value))
+            if (Physics.SphereCast(ray, sphereRadius, out hitInfo, maxDistance, layerMask.value))
             {
                 var currentSelection = hitInfo.transform;
                 if (currentSelection.CompareTag(selectableTag))
@@ -29,20 +32,12 @@ namespace GD.Selection
             }
         }
 
+        // Implement this OnDrawGizmos if you want to draw gizmos that are also pickable and always drawn
         private void OnDrawGizmos()
         {
-            Gizmos.color = Color.magenta;
-            Gizmos.DrawSphere(ray.origin, radius);
-        }
-
-        public RaycastHit GetHitInfo()
-        {
-            return hitInfo;
-        }
-
-        public Transform GetSelection()
-        {
-            return selection;
+            Gizmos.color = sphereColor;
+            Vector3 pointOnRay = ray.origin + ray.direction * maxDistance * sphereCastPositionAsProportion;
+            Gizmos.DrawWireSphere(pointOnRay, sphereRadius);
         }
     }
 }
