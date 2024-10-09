@@ -18,8 +18,9 @@ public class WeaponBehaviour : MonoBehaviour
     [ReadOnly]
     private bool isUpgraded;
 
+    [SerializeField]
     [RequireInterface(typeof(IUpgradeWeapon))]
-    public List<ScriptableObject> upgrade;
+    private List<ScriptableObject> upgrades;
 
     #region Properties
 
@@ -31,9 +32,17 @@ public class WeaponBehaviour : MonoBehaviour
 
     #endregion Fields
 
+    [ContextMenu("Apply Upgrade")]
     public void ApplyUpgrade()
     {
-        //TODO: Implement upgrade logic ONCE only
+        ///var rand = new Random();
+        //rand.Next(0, upgrade.Count);
+        int rand = 2;
+
+        var upgrade = upgrades[rand] as IUpgradeWeapon;
+        upgrade.Upgrade(this);
+
+        isUpgraded = true;
     }
 
     public override string ToString()

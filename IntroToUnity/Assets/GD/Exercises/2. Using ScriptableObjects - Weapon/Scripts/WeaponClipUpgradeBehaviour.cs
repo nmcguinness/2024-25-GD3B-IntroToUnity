@@ -9,6 +9,6 @@ public class WeaponClipUpgradeBehaviour : ScriptableObject, IUpgradeWeapon
 
     public void Upgrade(WeaponBehaviour w)
     {
-        w.Range += multiplier;
+        w.Range *= multiplier;
     }
 }

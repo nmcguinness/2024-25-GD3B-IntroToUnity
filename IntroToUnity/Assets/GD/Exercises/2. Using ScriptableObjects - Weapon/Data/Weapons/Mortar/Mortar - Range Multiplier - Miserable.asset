@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8525ec0f73ab8224d88449a5812300c2, type: 3}
-  m_Name: Mortar - Range Multiplier - Max Out
+  m_Name: Mortar - Range Multiplier - Miserable
   m_EditorClassIdentifier: 
-  description: Max out mortar range - makes it unstoppable!
-  multiplier: 20
+  description: A tiny mortar upgrade
+  multiplier: 1.1

@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8525ec0f73ab8224d88449a5812300c2, type: 3}
-  m_Name: Mortar - Range Multiplier - Max Out
+  m_Script: {fileID: 11500000, guid: ff6d1cfbf27e47540952788a2d60ce1e, type: 3}
+  m_Name: Item -  RPG
   m_EditorClassIdentifier: 
-  description: Max out mortar range - makes it unstoppable!
-  multiplier: 20
+  description: Generates machinegun - M249
+  prefab: {fileID: 1261748888023320, guid: 432643b6e5110004083fdff3e33e490b, type: 3}
