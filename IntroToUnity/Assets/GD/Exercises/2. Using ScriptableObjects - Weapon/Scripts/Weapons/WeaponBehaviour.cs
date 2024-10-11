@@ -35,6 +35,13 @@ public class WeaponBehaviour : MonoBehaviour
     [ContextMenu("Apply Upgrade")]
     public void ApplyUpgrade()
     {
+        //upgrade once
+        if (isUpgraded)
+        {
+            Debug.LogWarning("Weapon is already upgraded");
+            return;
+        }
+
         //get a random index in the range
         var index = Random.Range(0, upgrades.Count);
 
