@@ -13,7 +13,7 @@ public class WeaponRangeModify : ScriptableObject, IModifyWeapon
     [Range(0.1f, 10)]
     public float rangeMultiplier = 1;
 
-    public void Apply(WeaponBehaviour w)
+    public void Apply(WeaponData w)
     {
         w.Range *= rangeMultiplier;
     }
