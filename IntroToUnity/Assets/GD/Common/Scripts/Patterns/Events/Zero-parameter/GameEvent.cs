@@ -8,7 +8,9 @@ namespace GD
     /// any events that happen to the GameEvent they’re observing.
     /// </summary>
     /// <see cref="https://refactoring.guru/design-patterns/observer"/>
-    [CreateAssetMenu(fileName = "GameEvent", menuName = "GD/SO/Patterns/Events/GameEvent")]
+    [CreateAssetMenu(fileName = "GameEvent",
+        menuName = "GD/SO/Events/GameEvent",
+        order = 1)]
     public class GameEvent : ScriptableGameObject
     {
         private List<GameEventListener> listeners = new List<GameEventListener>();

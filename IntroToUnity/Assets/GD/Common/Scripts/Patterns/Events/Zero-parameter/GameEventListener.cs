@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 namespace GD
 {
+    [AddComponentMenu("GD/Events/Game Event Listener")]
     public class GameEventListener : MonoBehaviour
     {
         [SerializeField]
