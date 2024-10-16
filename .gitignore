@@ -2,6 +2,10 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
+
+# Lecturer distributed plugins - see email with license from lecturer
+**/[Aa]ssets/Plugins/Sirenix/*
+
 **/[Ll]ibrary/
 **/[Tt]emp/
 **/[Oo]bj/
