@@ -36,7 +36,11 @@ namespace GD.Items
         {
             if (targetLayer.OnLayer(other.gameObject))
             {
-                Debug.Log("Item picked up: " + itemData.name);
+                //notify listeners that the item has been picked up
+                onItemEvent?.Raise(itemData);
+
+                //remove the object from the scene
+                Destroy(gameObject);
             }
         }
     }

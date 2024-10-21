@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Sirenix.OdinInspector;
+using UnityEngine;
 
 namespace GD
 {
@@ -6,11 +7,13 @@ namespace GD
     {
         #region Fields
 
-        [Header("General Info")]
+        [FoldoutGroup("General Info")]
         [ContextMenuItem("Reset Name", "ResetName")]
         [SerializeField]
         private new string name = string.Empty;
 
+        [FoldoutGroup("General Info")]
+        [SerializeField]
         [ContextMenuItem("Reset Description", "ResetDescription")]
         [TextArea(2, 4)]
         private string description = string.Empty;
