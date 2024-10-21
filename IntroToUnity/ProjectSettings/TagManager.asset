@@ -8,16 +8,17 @@ TagManager:
   - Loot
   - Weapon
   - Dispenser
+  - Consumable
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Environment
   - Water
   - UI
-  - Interactable
-  - 
-  - 
+  - Item
+  - Camera
+  - Player
   - 
   - 
   - 
