@@ -22,7 +22,7 @@ namespace GD.Items
 
         [FoldoutGroup("Type & Category")]
         [SerializeField]
-        [Tooltip("The order of the objective in the list of objectives")
+        [Tooltip("The order of the objective in the list of objectives")]
         [Range(-1, int.MaxValue)]
         private int objectiveOrder = -1;
 
