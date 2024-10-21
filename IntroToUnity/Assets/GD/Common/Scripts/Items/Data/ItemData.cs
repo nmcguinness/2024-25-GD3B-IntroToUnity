@@ -20,6 +20,12 @@ namespace GD.Items
         [Tooltip("The type of item")]
         private ItemType itemType = ItemType.Resource;
 
+        [FoldoutGroup("Type & Category")]
+        [SerializeField]
+        [Tooltip("The order of the objective in the list of objectives")
+        [Range(-1, int.MaxValue)]
+        private int objectiveOrder = -1;
+
         [FoldoutGroup("UI & Sound", expanded: true)]
         [SerializeField]
         [PreviewField(50, ObjectFieldAlignment.Left)]
