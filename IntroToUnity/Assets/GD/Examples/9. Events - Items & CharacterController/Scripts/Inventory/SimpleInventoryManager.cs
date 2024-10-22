@@ -4,7 +4,7 @@ using UnityEngine;
 public class SimpleInventoryManager : MonoBehaviour
 {
     [SerializeField]
-    private SimpleInventory inventory;
+    private Inventory inventory;
 
     public void OnInteractablePickup(ItemData data)
     {
