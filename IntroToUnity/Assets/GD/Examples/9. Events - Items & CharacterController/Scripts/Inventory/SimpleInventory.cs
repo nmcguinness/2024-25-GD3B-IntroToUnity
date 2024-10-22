@@ -1,4 +1,5 @@
 using GD.Items;
+using GD.Types;
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
