@@ -11,6 +11,12 @@ namespace GD.Items
 
         [FoldoutGroup("Type & Category", expanded: true)]
         [SerializeField]
+        [Tooltip("The name of the item")]
+        [Range(0, int.MaxValue)]
+        private int value = 1;
+
+        [FoldoutGroup("Type & Category", expanded: true)]
+        [SerializeField]
         [Tooltip("The category of item")]
         [EnumToggleButtons]
         private ItemCategoryType itemCategory = ItemCategoryType.Consumable;
@@ -39,6 +45,8 @@ namespace GD.Items
         #endregion Fields
 
         #region Properties
+
+        public int Value { get => value; set => this.value = value; }
 
         public ItemCategoryType ItemCategory { get => itemCategory; set => itemCategory = value; }
         public ItemType ItemType { get => itemType; set => itemType = value; }

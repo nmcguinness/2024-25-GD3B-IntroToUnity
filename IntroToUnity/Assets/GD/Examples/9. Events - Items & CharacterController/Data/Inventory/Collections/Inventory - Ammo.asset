@@ -9,15 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98d618cdd14d3a1479e1ebf52d56b732, type: 3}
-  m_Name: Red Dead Redemption - Inventory
+  m_Script: {fileID: 11500000, guid: 860450803539e744cb34e32300a44436, type: 3}
+  m_Name: Inventory - Ammo
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
-    SerializedBytes: []
-    ReferencedUnityObjects:
-    - {fileID: 11400000, guid: e866cc006b061114e8279e860a82e6af, type: 2}
-    - {fileID: 11400000, guid: dff725ff098ce28489ea2a4aa0c23300, type: 2}
+    SerializedBytes: 
+    ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -36,31 +34,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 10
       Data: 0
-    - Name: $v
-      Entry: 3
-      Data: 12
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 10
-      Data: 1
-    - Name: $v
-      Entry: 3
-      Data: 50
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 13
       Data: 
