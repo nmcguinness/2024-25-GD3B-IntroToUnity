@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Bread
   description: Eat to restore 10 pts of health
   itemCategory: 0
-  itemType: 23
+  itemType: 24
   objectiveOrder: -1
   uiIcon: {fileID: 0}
   audioClip: {fileID: 0}
