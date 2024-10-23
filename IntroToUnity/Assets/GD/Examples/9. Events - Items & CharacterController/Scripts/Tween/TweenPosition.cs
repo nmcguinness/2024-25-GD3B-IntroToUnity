@@ -35,6 +35,9 @@ public class TweenPosition : MonoBehaviour
 
     private Vector3 originalPosition;
 
+    [SerializeField]
+    private bool isStartEnabled = false;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -42,7 +45,8 @@ public class TweenPosition : MonoBehaviour
         originalPosition = transform.position;
 
         //Start the tween
-        StartTween();
+        if (isStartEnabled)
+            StartTween();
     }
 
     /// <summary>
@@ -54,15 +58,15 @@ public class TweenPosition : MonoBehaviour
         transform.DOMove(originalPosition + positionDelta, durationSecs)
            .SetEase(easeFunction)
            .SetLoops(loopCount, loopType)
-           .OnComplete(OnComplete);
+           .OnComplete(() => onComplete?.Invoke());
     }
 
     /// <summary>
     /// Called when the tween has completed.
     /// </summary>
-    protected void OnComplete()
-    {
-        //Notify listeners that the tween has completed
-        onComplete?.Invoke();
-    }
+    //protected void OnComplete()
+    //{
+    //    //Notify listeners that the tween has completed
+    //    onComplete?.Invoke();
+    //}
 }
