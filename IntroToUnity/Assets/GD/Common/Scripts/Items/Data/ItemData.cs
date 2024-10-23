@@ -11,14 +11,8 @@ namespace GD.Items
 
         [FoldoutGroup("Type & Category", expanded: true)]
         [SerializeField]
-        [Tooltip("The name of the item")]
-        [Range(0, int.MaxValue)]
-        private int value = 1;
-
-        [FoldoutGroup("Type & Category", expanded: true)]
-        [SerializeField]
-        [Tooltip("The category of item")]
         [EnumToggleButtons]
+        [Tooltip("The category of item")]
         private ItemCategoryType itemCategory = ItemCategoryType.Consumable;
 
         [FoldoutGroup("Type & Category")]
@@ -26,33 +20,32 @@ namespace GD.Items
         [Tooltip("The type of item")]
         private ItemType itemType = ItemType.Resource;
 
-        [FoldoutGroup("Type & Category")]
+        [FoldoutGroup("UI & Sound", expanded: true)]
         [SerializeField]
-        [Tooltip("The order of the objective in the list of objectives")]
-        [Range(-1, int.MaxValue)]
-        private int objectiveOrder = -1;
+        [PreviewField(100, ObjectFieldAlignment.Left)]
+        [Tooltip("The sprite that represents this item in the UI")]
+        private Sprite uiIcon;
 
         [FoldoutGroup("UI & Sound", expanded: true)]
         [SerializeField]
-        [PreviewField(50, ObjectFieldAlignment.Left)]
-        private Sprite uiIcon;
+        [Tooltip("The audio clip that represents this item")]
+        private AudioClip audioClip;
 
         [FoldoutGroup("UI & Sound")]
         [SerializeField]
-        [AudioClipButton]
-        private AudioClip audioClip;
+        [Tooltip("The position of the audio source that plays the audio clip")]
+        private Vector3 audioPosition;
 
         #endregion Fields
 
         #region Properties
-
-        public int Value { get => value; set => this.value = value; }
 
         public ItemCategoryType ItemCategory { get => itemCategory; set => itemCategory = value; }
         public ItemType ItemType { get => itemType; set => itemType = value; }
 
         public Sprite UiIcon { get => uiIcon; set => uiIcon = value; }
         public AudioClip AudioClip { get => audioClip; set => audioClip = value; }
+        public Vector3 AudioPosition { get => audioPosition; set => audioPosition = value; }
 
         #endregion Properties
     }

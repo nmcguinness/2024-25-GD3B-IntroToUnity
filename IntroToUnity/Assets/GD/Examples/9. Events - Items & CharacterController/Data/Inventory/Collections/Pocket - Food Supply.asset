@@ -9,44 +9,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37f6e967d3fdbc84d84da809233a2b54, type: 3}
-  m_Name: Level 1 - Colorado Backwoods
+  m_Script: {fileID: 11500000, guid: afe1d22bdd55b9a4893639f6de660098, type: 3}
+  m_Name: Pocket - Food Supply
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 11400000, guid: 62c75c660387e8f4aad9d41ea3139826, type: 2}
-    - {fileID: 11400000, guid: dd38653bb6b5d554aaecb4b2a3b65db0, type: 2}
-    - {fileID: 11400000, guid: 4dab17678d8ee3148b5b0037924a4c37, type: 2}
+    - {fileID: 11400000, guid: f860d46f53ce9e848a431e9fd0421613, type: 2}
+    - {fileID: 11400000, guid: d993c47452d7d3244b18d93b1857a6e5, type: 2}
+    - {fileID: 11400000, guid: f3e5fd1fe7a7e5c4a90ab941ebaeb602, type: 2}
+    - {fileID: 11400000, guid: ad9bc5ecb92e085489ffb75897d0f97e, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: content
+    - Name: contents
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[GD.Inventory,
-        Assembly-CSharp]], mscorlib
+      Data: 0|System.Collections.Generic.Dictionary`2[[GD.Items.ItemData, Assembly-CSharp],[System.Int32,
+        mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
-        mscorlib]], mscorlib
+      Data: 1|System.Collections.Generic.ObjectEqualityComparer`1[[GD.Items.ItemData,
+        Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 4
     - Name: 
       Entry: 7
       Data: 
     - Name: $k
-      Entry: 1
-      Data: Ammo
-    - Name: $v
       Entry: 10
       Data: 0
+    - Name: $v
+      Entry: 3
+      Data: 10
     - Name: 
       Entry: 8
       Data: 
@@ -54,10 +55,22 @@ MonoBehaviour:
       Entry: 7
       Data: 
     - Name: $k
-      Entry: 1
-      Data: Food
-    - Name: $v
       Entry: 10
+      Data: 1
+    - Name: $v
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 2
+    - Name: $v
+      Entry: 3
       Data: 1
     - Name: 
       Entry: 8
@@ -66,11 +79,11 @@ MonoBehaviour:
       Entry: 7
       Data: 
     - Name: $k
-      Entry: 1
-      Data: Waypoints
-    - Name: $v
       Entry: 10
-      Data: 2
+      Data: 3
+    - Name: $v
+      Entry: 3
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -80,3 +93,4 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+  onInventoryChange: {fileID: 11400000, guid: 33666977a1382e34f97bbfaea224ca56, type: 2}

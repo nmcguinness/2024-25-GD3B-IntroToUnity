@@ -1,56 +1,36 @@
 ﻿using GD.Items;
 using GD.Types;
 using Sirenix.OdinInspector;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace GD
 {
-    [CreateAssetMenu(fileName = "New Inventory Collection",
-menuName = "GD/Inventory/Inventory Collection")]
+    //TODO - Fix Add on new ItemCategoryType
+
+    [CreateAssetMenu(fileName = "InventoryCollection",
+        menuName = "GD/Inventory/Collection")]
     public class InventoryCollection : SerializedScriptableObject
     {
         [SerializeField]
-        private Dictionary<ItemCategoryType, Inventory> content =
-            new Dictionary<ItemCategoryType, Inventory>();
+        private Dictionary<ItemCategoryType, Inventory> contents
+            = new Dictionary<ItemCategoryType, Inventory>();
 
-        //add
-        public void Add(ItemCategoryType key, ItemData data, int amount)
+        //add a new inventory to the collection
+        public void Add(ItemData itemData)
         {
-            if (content.ContainsKey(key))
+            //if I never collected a Consumable
+            if (!contents.ContainsKey(itemData.ItemCategory))
             {
-                content[key].Add(data, amount);
+                //make an inventory for consumables
+                contents.Add(itemData.ItemCategory,
+                    ScriptableObject.CreateInstance<Inventory>());
             }
-            else
-            {
-                Inventory inventory = ScriptableObject.CreateInstance<Inventory>();
-                inventory.Add(data, amount);
-                content.Add(key, inventory);
-            }
+
+            //add 1 specific consumable (e.g. ItemData = Apple) to the inventory
+            contents[itemData.ItemCategory].Add(itemData, 1);
+            //TODO - add more than 1?
         }
-
-        //remove
-        public bool Remove(ItemCategoryType key, ItemData data, int amount)
-        {
-            if (content.ContainsKey(key))
-            {
-                return content[key].Remove(data, amount);
-            }
-            return false;
-        }
-
-        //count
-        public int Count(ItemCategoryType key, ItemData itemData)
-        {
-            if (content.ContainsKey(key))
-            {
-                var inventory = content[key];
-                return inventory.Count(itemData);
-            }
-
-            return 0;
-        }
-
-        //TODO - clear
     }
 }

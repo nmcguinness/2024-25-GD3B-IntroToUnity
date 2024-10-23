@@ -7,13 +7,13 @@ namespace GD
     {
         #region Fields
 
-        [FoldoutGroup("General Info")]
-        [ContextMenuItem("Reset Name", "ResetName")]
         [SerializeField]
+        [FoldoutGroup("Info", expanded: true)]
+        [ContextMenuItem("Reset Name", "ResetName")]
         private new string name = string.Empty;
 
-        [FoldoutGroup("General Info")]
         [SerializeField]
+        [FoldoutGroup("Info")]
         [ContextMenuItem("Reset Description", "ResetDescription")]
         [TextArea(2, 4)]
         private string description = string.Empty;

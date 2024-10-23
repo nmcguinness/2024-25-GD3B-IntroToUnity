@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7958b19d7618a5439ac8bb6bf1983a6, type: 3}
-  m_Name: Rifle Ammo Pack
+  m_Name: Map - Springfield Uranium Mine
   m_EditorClassIdentifier: 
-  name: Carbine rifle ammo x10
-  description: To be used....
-  itemCategory: 0
-  itemType: 24
-  uiIcon: {fileID: 4707482838051528495, guid: 2262f408278271248889a3ea3c7e75bf, type: 3}
-  audioClip: {fileID: 8300000, guid: 0c008ee3ee72a4362a35be25fa5de043, type: 3}
+  name: Springfield Uranium Mine
+  description: An old ragged map, half torn, looks like it might lead to something
+    explosive!
+  itemCategory: 5
+  itemType: 14
+  uiIcon: {fileID: 0}
+  audioClip: {fileID: 0}
+  audioPosition: {x: 0, y: 0, z: 0}

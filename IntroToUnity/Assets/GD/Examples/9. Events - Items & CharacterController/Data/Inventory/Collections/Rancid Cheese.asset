@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7958b19d7618a5439ac8bb6bf1983a6, type: 3}
-  m_Name: Bread
+  m_Name: Rancid Cheese
   m_EditorClassIdentifier: 
-  name: Bread
-  description: Eat to restore 10 pts of health
+  name: Rancid Cheese
+  description: Ah, three day old bread! I could eat it but it might give me the....
   itemCategory: 0
-  itemType: 23
-  objectiveOrder: -1
+  itemType: 1
   uiIcon: {fileID: 0}
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 2667a0a008b044e218b63df62e2be749, type: 3}
+  audioPosition: {x: 0, y: 0, z: 0}

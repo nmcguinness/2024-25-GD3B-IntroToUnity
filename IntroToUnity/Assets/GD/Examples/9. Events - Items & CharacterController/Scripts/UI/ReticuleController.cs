@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ReticuleBehaviour : MonoBehaviour
+public class ReticuleController : MonoBehaviour
 {
     [SerializeField]
     private Image upper, lower, centre;

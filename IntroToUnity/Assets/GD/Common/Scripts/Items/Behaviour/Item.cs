@@ -36,10 +36,13 @@ namespace GD.Items
         {
             if (targetLayer.OnLayer(other.gameObject))
             {
-                //notify listeners that the item has been picked up
+                //set the audio position to the transform position
+                itemData.AudioPosition = transform.position;
+
+                //raise the event to notify listeners
                 onItemEvent?.Raise(itemData);
 
-                //remove the object from the scene
+                //remove the item from the scene
                 Destroy(gameObject);
             }
         }
