@@ -260,7 +260,10 @@ MonoBehaviour:
   onComplete:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
+  originalPosition: {x: 0, y: 0, z: 0}
   positionDelta: {x: -3, y: 0, z: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &133267228 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4589606727732830, guid: 6d6892a877c0a664cb5a53eb2dd13c88,
@@ -2256,19 +2259,13 @@ MonoBehaviour:
   onComplete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2132060131}
-        m_TargetAssemblyTypeName: TweenPosition, Assembly-CSharp
-        m_MethodName: StartTween
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      - {m_Target: {fileID: 2132060131}, m_TargetAssemblyTypeName: TweenPosition, Assembly-CSharp, m_MethodName: StartTween, m_Mode: 1, m_Arguments: {m_ObjectArgument: {fileID: 0},
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0,
+          m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
+    m_CallsDirty: 1
+  originalPosition: {x: 0, y: 0, z: 0}
   positionDelta: {x: 0, y: 1, z: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
 --- !u!136 &1111950982
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2483,31 +2480,16 @@ MonoBehaviour:
   onComplete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1965188661}
-        m_TargetAssemblyTypeName: TweenPosition, Assembly-CSharp
-        m_MethodName: StartTween
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 64517262}
-        m_TargetAssemblyTypeName: TweenPosition, Assembly-CSharp
-        m_MethodName: StartTween
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      - {m_Target: {fileID: 1965188661}, m_TargetAssemblyTypeName: TweenPosition, Assembly-CSharp, m_MethodName: StartTween, m_Mode: 1, m_Arguments: {m_ObjectArgument: {fileID: 0},
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0,
+          m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
+      - {m_Target: {fileID: 64517262}, m_TargetAssemblyTypeName: TweenPosition, Assembly-CSharp, m_MethodName: StartTween, m_Mode: 1, m_Arguments: {m_ObjectArgument: {fileID: 0},
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0,
+          m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
+    m_CallsDirty: 1
+  originalPosition: {x: 0, y: 0, z: 0}
   positionDelta: {x: 0, y: 1, z: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1477548807
 GameObject:
   m_ObjectHideFlags: 0
@@ -3845,19 +3827,13 @@ MonoBehaviour:
   onComplete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1111950981}
-        m_TargetAssemblyTypeName: TweenPosition, Assembly-CSharp
-        m_MethodName: StartTween
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      - {m_Target: {fileID: 1111950981}, m_TargetAssemblyTypeName: TweenPosition, Assembly-CSharp, m_MethodName: StartTween, m_Mode: 1, m_Arguments: {m_ObjectArgument: {fileID: 0},
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0,
+          m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
+    m_CallsDirty: 1
+  originalPosition: {x: 0, y: 0, z: 0}
   positionDelta: {x: 0, y: 1, z: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
 --- !u!136 &1965188662
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4053,7 +4029,10 @@ MonoBehaviour:
   onComplete:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
+  originalPosition: {x: 0, y: 0, z: 0}
   positionDelta: {x: 0, y: 1, z: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
 --- !u!136 &2132060132
 CapsuleCollider:
   m_ObjectHideFlags: 0
