@@ -25,7 +25,7 @@ namespace GD.State
         /// <summary>
         /// Evaluates conditions each frame and handles game state transitions.
         /// </summary>
-        private void Update()
+        private void Update()  //TODO - NMCG : Slow down the update rate to once every 0.5 seconds
         {
             // If the game has already ended, no need to evaluate further
             if (gameEnded)
@@ -54,7 +54,7 @@ namespace GD.State
         /// <summary>
         /// Handles the logic when the player wins.
         /// </summary>
-        private void HandleWin()
+        protected virtual void HandleWin()
         {
             Debug.Log($"Player Wins! Win condition met at {winCondition.TimeMet} seconds.");
 
@@ -72,7 +72,7 @@ namespace GD.State
         /// <summary>
         /// Handles the logic when the player loses.
         /// </summary>
-        private void HandleLoss()
+        protected virtual void HandleLoss()
         {
             Debug.Log($"Player Loses! Lose condition met at {loseCondition.TimeMet} seconds.");
 

@@ -5,7 +5,7 @@ namespace GD.State
     /// <summary>
     /// A composite condition that is met when all child conditions are met.
     /// </summary>
-    [CreateAssetMenu(fileName = "AndCondition", menuName = "GD/Conditions/And Condition")]
+    [CreateAssetMenu(fileName = "AndCondition", menuName = "GD/Conditions/Composite/And Condition")]
     public class AndCondition : CompositeCondition
     {
         /// <summary>
@@ -21,7 +21,7 @@ namespace GD.State
             foreach (var condition in conditions)
             {
                 if (!condition.Evaluate())
-                    allMet = false;
+                    return false;
             }
             if (allMet && TimeMet == -1f)
             {
