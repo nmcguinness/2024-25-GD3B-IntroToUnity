@@ -7,13 +7,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11b114f5696f3624da1271564de6a46b, type: 3}
-  m_Name: Win Condition - Player - Rank
+  m_Name: Win Condition - Player Rank - Greater 100
   m_EditorClassIdentifier: 
-  name: Som name
-  description: Bla bla bla
+  name: 
+  description: 
   evaluateStrategy: 1
   priorityLevel: 5
   OnConditionMet:
@@ -21,5 +21,4 @@ MonoBehaviour:
       m_Calls: []
   isMet: 0
   timeMet: -1
-  player: {fileID: 0}
-  rankThreshold: 500
+  rankThreshold: 100

@@ -1,18 +1,24 @@
 using GD.State;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "GD/Conditions/Single/Player Health Condition")]
+[CreateAssetMenu(menuName = "GD/Conditions/Game/Player Health")]
 public class PlayerHealthCondition : ConditionBase
 {
     [SerializeField]
+    private int healthThreshold = 0;
+
     private Player player;
 
-    [SerializeField]
-    private int healthThreshold = 0;
+    private void Awake()
+    {
+        player = FindFirstObjectByType<Player>();
+
+        if (player == null)
+            throw new System.Exception("Player object not found in the scene.");
+    }
 
     protected override bool EvaluateCondition()
     {
-        //this code could be really complex and time-consuming
-        return player.health <= healthThreshold;
+        return player.health < healthThreshold;
     }
 }

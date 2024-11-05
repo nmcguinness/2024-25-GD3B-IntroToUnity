@@ -1,12 +1,12 @@
 ﻿using DG.Tweening;
 using UnityEngine;
 
-namespace Assets.GD.Common.Scripts.Tweens
+namespace GD.Tweens
 {
     public class TweenRotation : BaseTween
     {
         [SerializeField]
-        private Vector3 rotationTargetAngleDegrees = new Vector3(45, 0, 0);
+        private Vector3 rotationTargetAngleDegrees = new Vector3(0, 180, 0);
 
         private Quaternion originalRotation;
 

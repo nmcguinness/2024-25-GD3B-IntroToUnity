@@ -1,14 +1,21 @@
 using GD.State;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "GD/Conditions/Single/Player Rank Condition")]
+[CreateAssetMenu(menuName = "GD/Conditions/Game/Player Rank")]
 public class PlayerRankCondition : ConditionBase
 {
     [SerializeField]
+    private int rankThreshold = 1000;
+
     private Player player;
 
-    [SerializeField]
-    private int rankThreshold = 200;
+    private void Awake()
+    {
+        player = FindFirstObjectByType<Player>();
+
+        if (player == null)
+            throw new System.Exception("Player object not found in the scene.");
+    }
 
     protected override bool EvaluateCondition()
     {
