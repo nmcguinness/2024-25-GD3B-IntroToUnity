@@ -1,3 +1,4 @@
+using GD.Items;
 using UnityEngine;
 
 namespace GD.State
@@ -7,20 +8,40 @@ namespace GD.State
     /// </summary>
     public class StateManager : MonoBehaviour
     {
+        [SerializeField]
+        [Tooltip("The player object")]
+        private Player player;
+
+        [SerializeField]
+        [Tooltip("The player's inventory collection (e.g. a saddlebag)")]
+        private InventoryCollection inventoryCollection;
+
         /// <summary>
         /// The condition that determines if the player wins.
         /// </summary>
-        public ConditionBase winCondition;
+        [SerializeField]
+        [Tooltip("The condition that determines if the player wins")]
+        private ConditionBase winCondition;
 
         /// <summary>
         /// The condition that determines if the player loses.
         /// </summary>
-        public ConditionBase loseCondition;
+        [SerializeField]
+        [Tooltip("The condition that determines if the player loses")]
+        private ConditionBase loseCondition;
 
         /// <summary>
         /// Indicates whether the game has ended.
         /// </summary>
         private bool gameEnded = false;
+
+        private ConditionContext conditionContext;
+
+        private void Awake()
+        {
+            // Wrap the two objects inside the context envelope
+            conditionContext = new ConditionContext(player, inventoryCollection);
+        }
 
         /// <summary>
         /// Evaluates conditions each frame and handles game state transitions.
@@ -32,7 +53,7 @@ namespace GD.State
                 return;
 
             // Evaluate the win condition
-            if (winCondition != null && winCondition.Evaluate())
+            if (winCondition != null && winCondition.Evaluate(conditionContext))
             {
                 HandleWin();
                 // Set gameEnded to true to prevent further updates
@@ -41,7 +62,7 @@ namespace GD.State
                 // enabled = false;
             }
             // Evaluate the lose condition only if the win condition is not met
-            else if (loseCondition != null && loseCondition.Evaluate())
+            else if (loseCondition != null && loseCondition.Evaluate(conditionContext))
             {
                 HandleLoss();
                 // Set gameEnded to true to prevent further updates

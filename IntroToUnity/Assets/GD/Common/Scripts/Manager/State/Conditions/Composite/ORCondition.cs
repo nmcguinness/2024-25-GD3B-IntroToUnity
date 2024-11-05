@@ -13,14 +13,14 @@ namespace GD.State
         /// Evaluates the condition logic: returns true if any child condition is met.
         /// </summary>
         /// <returns>True if any child condition is met; otherwise, false.</returns>
-        protected override bool EvaluateCondition()
+        protected override bool EvaluateCondition(ConditionContext conditionContext)
         {
             // Sort conditions by priority before evaluation
             SortConditionsByPriority();
 
             foreach (var condition in conditions)
             {
-                if (condition.Evaluate())
+                if (condition.Evaluate(conditionContext))
                 {
                     if (TimeMet == -1f)
                     {

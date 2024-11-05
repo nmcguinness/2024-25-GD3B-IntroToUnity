@@ -39,7 +39,7 @@ namespace GD.State
         /// <summary>
         /// Indicates whether the condition has been met.
         /// </summary>
-        [SerializeField, ReadOnly]
+        [SerializeField]
         [Tooltip("Indicates whether the condition has been met.")]
         [FoldoutGroup("State & Timing")]
         private bool isMet = false;
@@ -47,7 +47,7 @@ namespace GD.State
         /// <summary>
         /// The time in seconds since the level load when the condition was met.
         /// </summary>
-        [SerializeField, ReadOnly]
+        [SerializeField]
         [Tooltip("The time in seconds since the level load when the condition was met.")]
         [FoldoutGroup("State & Timing")]
         private float timeMet = -1f; // -1 indicates the condition hasn't been met yet
@@ -67,17 +67,17 @@ namespace GD.State
         /// Evaluates the condition based on the selected strategy.
         /// </summary>
         /// <returns>True if the condition is met; otherwise, false.</returns>
-        public bool Evaluate()
+        public bool Evaluate(ConditionContext conditionContext)
         {
             switch (evaluateStrategy)
             {
                 // Evaluate the condition even if it is already met
                 case EvaluateStrategy.EvaluateAlways:
-                    return EvaluateAlways();
+                    return EvaluateAlways(conditionContext);
 
                 // Evaluate the condition until it is met, then stop evaluating
                 case EvaluateStrategy.EvaluateUntilMet:
-                    return EvaluateUntilMet();
+                    return EvaluateUntilMet(conditionContext);
 
                 default:
                     return false;
@@ -88,11 +88,11 @@ namespace GD.State
         /// Always evaluates the condition logic, regardless of whether it is already met.
         /// </summary>
         /// <returns>True if the condition is met; otherwise, false.</returns>
-        private bool EvaluateAlways()
+        private bool EvaluateAlways(ConditionContext conditionContext)
         {
             // Always evaluate the condition logic
             bool previousMet = IsMet;
-            bool result = EvaluateCondition();
+            bool result = EvaluateCondition(conditionContext);
 
             // If the condition is met, invoke the event
             if (result)
@@ -119,13 +119,13 @@ namespace GD.State
         /// Evaluates the condition logic until it becomes met, then stops evaluating.
         /// </summary>
         /// <returns>True if the condition is met; otherwise, false.</returns>
-        private bool EvaluateUntilMet()
+        private bool EvaluateUntilMet(ConditionContext conditionContext)
         {
             // Evaluate until the condition is met, then return true without re-evaluating
             if (IsMet)
                 return true;
 
-            bool result = EvaluateCondition();
+            bool result = EvaluateCondition(conditionContext);
             if (result)
             {
                 IsMet = true;
@@ -139,7 +139,7 @@ namespace GD.State
         /// The actual condition logic to be implemented by derived classes.
         /// </summary>
         /// <returns>True if the condition is met; otherwise, false.</returns>
-        protected abstract bool EvaluateCondition();
+        protected abstract bool EvaluateCondition(ConditionContext conditionContext);
 
         /// <summary>
         /// Resets the condition state.

@@ -1,0 +1,29 @@
+﻿using GD.Items;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GD.State
+{
+    /// <summary>
+    /// Store reference to entities/objects that the conditions need to check against.
+    /// </summary>
+    public class ConditionContext
+    {
+        //Used by the conditions to get the current state of the player
+        public Player player;
+
+        //Used by the conditions to get the current state of the inventory
+        public InventoryCollection inventoryCollection;
+
+        //add other references here that are useful and used by conditions...
+
+        public ConditionContext(Player player, InventoryCollection inventoryCollection)
+        {
+            this.player = player;
+            this.inventoryCollection = inventoryCollection;
+        }
+    }
+}

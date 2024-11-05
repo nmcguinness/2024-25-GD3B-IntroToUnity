@@ -12,7 +12,7 @@ namespace GD.State
         /// Evaluates the condition logic: returns true if exactly one child condition is met.
         /// </summary>
         /// <returns>True if exactly one child condition is met; otherwise, false.</returns>
-        protected override bool EvaluateCondition()
+        protected override bool EvaluateCondition(ConditionContext conditionContext)
         {
             // Sort conditions by priority before evaluation
             SortConditionsByPriority();
@@ -21,7 +21,7 @@ namespace GD.State
 
             foreach (var condition in conditions)
             {
-                if (condition.Evaluate())
+                if (condition.Evaluate(conditionContext))
                 {
                     metCount++;
                     // If more than one condition is met, return false

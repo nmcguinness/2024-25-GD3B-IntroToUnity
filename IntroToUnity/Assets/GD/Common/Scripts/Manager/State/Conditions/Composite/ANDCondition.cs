@@ -12,7 +12,7 @@ namespace GD.State
         /// Evaluates the condition logic: returns true if all child conditions are met.
         /// </summary>
         /// <returns>True if all child conditions are met; otherwise, false.</returns>
-        protected override bool EvaluateCondition()
+        protected override bool EvaluateCondition(ConditionContext conditionContext)
         {
             // Sort conditions by priority before evaluation
             SortConditionsByPriority();
@@ -20,7 +20,7 @@ namespace GD.State
             bool allMet = true;
             foreach (var condition in conditions)
             {
-                if (!condition.Evaluate())
+                if (!condition.Evaluate(conditionContext))
                     return false;
             }
             if (allMet && TimeMet == -1f)

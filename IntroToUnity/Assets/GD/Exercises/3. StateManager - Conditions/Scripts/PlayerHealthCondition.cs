@@ -7,18 +7,8 @@ public class PlayerHealthCondition : ConditionBase
     [SerializeField]
     private int healthThreshold = 0;
 
-    private Player player;
-
-    private void Awake()
+    protected override bool EvaluateCondition(ConditionContext conditionContext)
     {
-        player = FindFirstObjectByType<Player>();
-
-        if (player == null)
-            throw new System.Exception("Player object not found in the scene.");
-    }
-
-    protected override bool EvaluateCondition()
-    {
-        return player.health < healthThreshold;
+        return conditionContext.player.health < healthThreshold;
     }
 }
