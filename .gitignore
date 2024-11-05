@@ -5,6 +5,7 @@
 
 # Lecturer distributed plugins - see email with license from lecturer
 **/[Aa]ssets/Plugins/Sirenix/*
+**/[Aa]ssets/Plugins/Demigiant/*
 
 **/[Ll]ibrary/
 **/[Tt]emp/
@@ -52,10 +53,9 @@ ExportedObj/
 *.VC.db
 
 # Unity3D generated meta files
-**/*.pidb.meta
-**/*.pdb.meta
-**/*.mdb.meta
-**/*.cs.meta
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
 
 # Unity3D generated file on crash reports
 sysinfo.txt
@@ -75,3 +75,5 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 **/[Aa]ssets/[Ss]treamingAssets/aa.meta
 **/[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# End of https://www.toptal.com/developers/gitignore/api/unity
