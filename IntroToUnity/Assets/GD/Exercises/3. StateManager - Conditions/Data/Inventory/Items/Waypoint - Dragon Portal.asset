@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7958b19d7618a5439ac8bb6bf1983a6, type: 3}
-  m_Name: Item - Random
+  m_Name: Waypoint - Dragon Portal
   m_EditorClassIdentifier: 
-  name: Random
-  description: 
-  itemCategory: 6
-  itemType: 23
-  uiIcon: {fileID: 21300000, guid: e5da668c6557abb47a17a303cf69943f, type: 3}
-  audioClip: {fileID: 8300000, guid: 7478151cf36724a7dada558f746c3633, type: 3}
-  audioPosition: {x: 0.97301835, y: 0.96, z: 2.3250396}
+  name: Waypoint - Dragon Portal
+  description: Portal text...
+  itemCategory: 9
+  itemType: 4
+  uiIcon: {fileID: 21300000, guid: 25180e46342b2214a9d68d0f0ce01ca5, type: 3}
+  audioClip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
+  audioPosition: {x: 0, y: 0, z: 0}
