@@ -1,4 +1,5 @@
 using GD.Items;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace GD.State
@@ -8,17 +9,20 @@ namespace GD.State
     /// </summary>
     public class StateManager : MonoBehaviour
     {
+        [FoldoutGroup("Context", expanded: true)]
         [SerializeField]
-        [Tooltip("The player object")]
+        [Tooltip("Player reference to evaluate conditions required by the context")]
         private Player player;
 
+        [FoldoutGroup("Context")]
         [SerializeField]
-        [Tooltip("The player's inventory collection (e.g. a saddlebag)")]
+        [Tooltip("Player inventory collection to evaluate conditions required by the context")]
         private InventoryCollection inventoryCollection;
 
         /// <summary>
         /// The condition that determines if the player wins.
         /// </summary>
+        [FoldoutGroup("Conditions", expanded: true)]
         [SerializeField]
         [Tooltip("The condition that determines if the player wins")]
         private ConditionBase winCondition;
@@ -26,6 +30,7 @@ namespace GD.State
         /// <summary>
         /// The condition that determines if the player loses.
         /// </summary>
+        [FoldoutGroup("Conditions")]
         [SerializeField]
         [Tooltip("The condition that determines if the player loses")]
         private ConditionBase loseCondition;

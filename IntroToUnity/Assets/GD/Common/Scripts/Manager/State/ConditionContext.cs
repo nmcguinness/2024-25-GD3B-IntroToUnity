@@ -18,7 +18,7 @@ namespace GD.State
         //Used by the conditions to get the current state of the inventory
         public InventoryCollection inventoryCollection;
 
-        //add other references here that are useful and used by conditions...
+        //Add other context dependencies here
 
         public ConditionContext(Player player, InventoryCollection inventoryCollection)
         {
