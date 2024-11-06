@@ -26,7 +26,7 @@ namespace GD.State
             if (allMet && TimeMet == -1f)
             {
                 TimeMet = Time.timeSinceLevelLoad;
-                OnConditionMet?.Invoke();
+                OnConditionMet?.Raise();
             }
             return allMet;
         }

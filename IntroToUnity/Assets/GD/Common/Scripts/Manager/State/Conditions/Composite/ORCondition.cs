@@ -25,7 +25,7 @@ namespace GD.State
                     if (TimeMet == -1f)
                     {
                         TimeMet = Time.timeSinceLevelLoad;
-                        OnConditionMet?.Invoke();
+                        OnConditionMet?.Raise();
                     }
                     return true;
                 }

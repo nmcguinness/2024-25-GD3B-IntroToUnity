@@ -2,6 +2,7 @@
 using UnityEngine.Events;
 using Sirenix.OdinInspector;
 using GD.Types;
+using GD.Events;
 
 namespace GD.Tasks
 {
@@ -12,7 +13,7 @@ namespace GD.Tasks
     [CreateAssetMenu(fileName = "Task", menuName = "GD/Tasks/Task")]
     public class Task : ScriptableGameObject
     {
-        #region Fields and Properties
+        #region Fields
 
         // Group settings under a foldout
         [FoldoutGroup("Settings"), SerializeField, Tooltip("Initial delay in seconds before the task is first executed")]
@@ -24,12 +25,8 @@ namespace GD.Tasks
         [FoldoutGroup("Settings"), SerializeField, Tooltip("Number of times the task should repeat. 1 = execute once, N = execute N times, -1 = infinite repetitions")]
         private int repeatCount = 1;
 
-        // UnityEvents for task start and completion
-        [FoldoutGroup("Events"), SerializeField, Tooltip("Event invoked when the task starts")]
-        private UnityEvent onStarted = new UnityEvent();
-
-        [FoldoutGroup("Events"), SerializeField, Tooltip("Event invoked when the task completes")]
-        private UnityEvent onCompleted = new UnityEvent();
+        [FoldoutGroup("Events"), SerializeField, Tooltip("GameEvent invoked when the task completes")]
+        private GameEvent onCompleted;
 
         // Non-serialized runtime fields
         [SerializeField, HideInInspector]
@@ -65,32 +62,27 @@ namespace GD.Tasks
             }
         }
 
-        [FoldoutGroup("Events"), PropertyOrder(3)]
-        public UnityEvent OnStarted
-        {
-            get => onStarted;
-            set => onStarted = value ?? new UnityEvent();
-        }
-
         [FoldoutGroup("Events"), PropertyOrder(4)]
-        public UnityEvent OnCompleted
+        public GameEvent OnCompleted
         {
             get => onCompleted;
-            set => onCompleted = value ?? new UnityEvent();
+            set => onCompleted = value;
         }
 
         // Runtime Info for display in TaskManager
-        [TableColumnWidth(150, Resizable = false), ShowInInspector, ReadOnly, LabelText("Task Name")]
-        public string TaskName => name;
 
-        [TableColumnWidth(50, Resizable = false), ShowInInspector, ReadOnly, LabelText("Exec Count")]
+        [FoldoutGroup("Runtime Info")]
+        [ShowInInspector, ReadOnly, LabelText("Execution Count")]
+        [Tooltip("Number of times the task has been executed")]
         public int CurrentExecutions
         {
             get => currentExecutions;
             private set => currentExecutions = value;
         }
 
-        [TableColumnWidth(80, Resizable = false), ShowInInspector, ReadOnly, LabelText("Next In"), PropertyOrder(7)]
+        [FoldoutGroup("Runtime Info")]
+        [ShowInInspector, ReadOnly, LabelText("Starts In")]
+        [Tooltip("Time in seconds until the task is executed")]
         public string TimeUntilNextExecution
         {
             get
@@ -100,10 +92,16 @@ namespace GD.Tasks
             }
         }
 
-        [TableColumnWidth(60, Resizable = false), ShowInInspector, ReadOnly, LabelText("Repeats")]
-        public string RepeatInfo => RepeatCount == -1 ? "∞" : (RepeatCount - CurrentExecutions).ToString();
+        [FoldoutGroup("Runtime Info")]
+        [ShowInInspector, ReadOnly, LabelText("Scheduled Time")]
+        [Tooltip("Time in seconds when the task is scheduled to execute")]
+        public float ScheduledTime
+        {
+            get => scheduledTime;
+            set => scheduledTime = value;
+        }
 
-        #endregion Fields and Properties
+        #endregion Fields
 
         #region Methods
 
@@ -132,14 +130,11 @@ namespace GD.Tasks
             // Increment the execution count
             CurrentExecutions++;
 
-            // Invoke the OnStarted event
-            OnStarted?.Invoke();
-
             // Perform task-specific logic using the context
             PerformTaskLogic(context);
 
             // Invoke the OnCompleted event
-            OnCompleted?.Invoke();
+            OnCompleted?.Raise();
         }
 
         /// <summary>
@@ -159,16 +154,6 @@ namespace GD.Tasks
         public void ResetTask()
         {
             CurrentExecutions = 0;
-        }
-
-        /// <summary>
-        /// Gets or sets the scheduled time for the task execution.
-        /// </summary>
-        [ShowInInspector, ReadOnly]
-        public float ScheduledTime
-        {
-            get => scheduledTime;
-            internal set => scheduledTime = value;
         }
 
         #endregion Methods

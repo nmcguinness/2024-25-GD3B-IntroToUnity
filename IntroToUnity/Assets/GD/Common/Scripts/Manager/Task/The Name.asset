@@ -7,16 +7,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 548450a166b5c5c419211fa79e833c98, type: 3}
-  m_Name: Lose Condition - Player Health - Less Zero
+  m_Script: {fileID: 11500000, guid: 819137011a0edd142a952b02989fb666, type: 3}
+  m_Name: The Name
   m_EditorClassIdentifier: 
   name: 
   description: 
-  evaluateStrategy: 1
-  priorityLevel: 3
-  OnConditionMet: {fileID: 0}
-  isMet: 0
-  timeMet: -1
-  healthThreshold: 0
+  delay: 0
+  repeatInterval: 0
+  repeatCount: 1
+  onCompleted: {fileID: 0}
+  currentExecutions: 0
+  scheduledTime: 0

@@ -1,3 +1,4 @@
+using GD.Events;
 using GD.Types;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -32,9 +33,9 @@ namespace GD.State
         /// UnityEvent invoked when the condition becomes met.
         /// </summary>
         [SerializeField]
-        [Tooltip("UnityEvent invoked when the condition is met.")]
+        [Tooltip("GameEvent invoked when the condition is met.")]
         [FoldoutGroup("Events")]
-        public UnityEvent OnConditionMet;
+        public GameEvent OnConditionMet;
 
         /// <summary>
         /// Indicates whether the condition has been met.
@@ -102,7 +103,7 @@ namespace GD.State
                 {
                     IsMet = true;
                     TimeMet = Time.timeSinceLevelLoad;
-                    OnConditionMet?.Invoke();
+                    OnConditionMet?.Raise();
                 }
             }
             // If the condition is not met, reset the state
@@ -130,7 +131,7 @@ namespace GD.State
             {
                 IsMet = true;
                 TimeMet = Time.timeSinceLevelLoad;
-                OnConditionMet?.Invoke();
+                OnConditionMet?.Raise();
             }
             return result;
         }
@@ -144,6 +145,7 @@ namespace GD.State
         /// <summary>
         /// Resets the condition state.
         /// </summary>
+        [ContextMenu("Reset Condition")]
         public virtual void ResetCondition()
         {
             IsMet = false;
