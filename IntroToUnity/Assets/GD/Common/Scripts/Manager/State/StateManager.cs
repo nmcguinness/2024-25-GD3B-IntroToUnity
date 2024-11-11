@@ -42,8 +42,8 @@ namespace GD.State
         private ConditionBase loseCondition;
 
         [SerializeField]
-        [Tooltip("Set of optional conditions related to awards/quests")]
-        private List<ConditionBase> awardConditions;
+        [Tooltip("Set of optional conditions related to acheivements")]
+        private List<ConditionBase> achievementConditions;
 
         /// <summary>
         /// Indicates whether the game has ended.
@@ -92,9 +92,9 @@ namespace GD.State
                 // enabled = false;
             }
 
-            foreach (var awardCondition in awardConditions)
+            foreach (var achievmentCondition in achievementConditions)
             {
-                if (awardCondition != null && awardCondition.Evaluate(conditionContext))
+                if (achievmentCondition != null && achievmentCondition.Evaluate(conditionContext))
                 {
                     //do something
                 }
