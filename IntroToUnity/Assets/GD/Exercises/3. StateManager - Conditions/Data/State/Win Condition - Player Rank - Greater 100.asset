@@ -16,9 +16,7 @@ MonoBehaviour:
   description: 
   evaluateStrategy: 1
   priorityLevel: 5
-  OnConditionMet:
-    m_PersistentCalls:
-      m_Calls: []
-  isMet: 1
-  timeMet: 5.0212607
+  OnConditionMet: {fileID: 0}
+  isMet: 0
+  timeMet: -1
   rankThreshold: 200

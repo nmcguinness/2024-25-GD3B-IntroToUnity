@@ -1,5 +1,6 @@
 using GD.Items;
 using Sirenix.OdinInspector;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace GD.State
@@ -19,10 +20,15 @@ namespace GD.State
         [Tooltip("Player inventory collection to evaluate conditions required by the context")]
         private InventoryCollection inventoryCollection;
 
+        [FoldoutGroup("Conditions", expanded: true)]
+        [SerializeField]
+        [Tooltip("Reset conditions on start")]
+        private bool resetConditionsOnStart = true;
+
         /// <summary>
         /// The condition that determines if the player wins.
         /// </summary>
-        [FoldoutGroup("Conditions", expanded: true)]
+        [FoldoutGroup("Conditions")]
         [SerializeField]
         [Tooltip("The condition that determines if the player wins")]
         private ConditionBase winCondition;
@@ -35,6 +41,10 @@ namespace GD.State
         [Tooltip("The condition that determines if the player loses")]
         private ConditionBase loseCondition;
 
+        [SerializeField]
+        [Tooltip("Set of optional conditions related to awards/quests")]
+        private List<ConditionBase> awardConditions;
+
         /// <summary>
         /// Indicates whether the game has ended.
         /// </summary>
@@ -46,6 +56,12 @@ namespace GD.State
         {
             // Wrap the two objects inside the context envelope
             conditionContext = new ConditionContext(player, inventoryCollection);
+        }
+
+        private void Start()
+        {
+            if (resetConditionsOnStart)
+                ResetConditions();
         }
 
         /// <summary>
@@ -74,6 +90,14 @@ namespace GD.State
                 gameEnded = true;
                 // Optionally, disable this component
                 // enabled = false;
+            }
+
+            foreach (var awardCondition in awardConditions)
+            {
+                if (awardCondition != null && awardCondition.Evaluate(conditionContext))
+                {
+                    //do something
+                }
             }
         }
 

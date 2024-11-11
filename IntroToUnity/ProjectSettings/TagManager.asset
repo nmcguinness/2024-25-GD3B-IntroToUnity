@@ -9,6 +9,7 @@ TagManager:
   - Weapon
   - Dispenser
   - Consumable
+  - CinemachineTarget
   layers:
   - Default
   - TransparentFX
