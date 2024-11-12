@@ -24,7 +24,7 @@ namespace GD.Tick
             RealTime = 1,    // Fires every tick (base rate)
             HalfTime = 2,    // Fires every 2 ticks
             QuarterTime = 4, // Fires every 4 ticks
-            EighthTime = 8   // Fires every 8 ticks
+            EighthTime = 8   // Fires every 8 ticks (8 x 0.03 = 0.24 ~ typical human perception
         }
 
         // The current tick count, starting from zero.

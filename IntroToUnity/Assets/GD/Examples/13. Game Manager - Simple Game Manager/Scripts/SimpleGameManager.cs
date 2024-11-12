@@ -1,4 +1,3 @@
-using GD.Tick;
 using UnityEngine;
 
 public class SimpleGameManager : MonoBehaviour
@@ -15,15 +14,18 @@ public class SimpleGameManager : MonoBehaviour
     private void Start()
     {
         // Register with the tick system
-        TimeTickSystem.Instance.RegisterListener(checkStateTickRate, HandleTick);
+        //  TimeTickSystem.Instance.RegisterListener(checkStateTickRate, HandleTick);
 
         // Show main menu
         ShowMenu();
+
+        // Set the initial state (player and camera positions, etc.)
+        StartGame();
     }
 
     private void OnDestroy()
     {
-        TimeTickSystem.Instance.UnregisterListener(checkStateTickRate, HandleTick);
+        //  TimeTickSystem.Instance.UnregisterListener(checkStateTickRate, HandleTick);
     }
 
     public void StartGame()
@@ -32,6 +34,15 @@ public class SimpleGameManager : MonoBehaviour
         //event to InventoryManager
         //countdown to ToastManager
         //enable input control
+    }
+
+    public void RestartGame()
+    {
+        //reset the player stats
+
+        //reset the camera
+
+        //re-spawn enemies
     }
 
     public void EndGame()
@@ -54,48 +65,41 @@ public class SimpleGameManager : MonoBehaviour
     public void ToggleMenu()
     {
         if (!menuObject.activeSelf)
-        {
-            menuObject.SetActive(true);
-            Time.timeScale = 0;
-        }
+            ShowMenu();
         else
-        {
-            menuObject.SetActive(false);
-            Time.timeScale = 1;
-        }
+            HideMenu();
     }
 
     public void ShowMenu()
     {
-        if (!menuObject.activeSelf)
-        {
-            HideHUD();
+        HideHUD();
 
-            //   Time.timeScale = 0;
+        Time.timeScale = 0;
 
-            menuObject.SetActive(true);
-        }
+        menuObject.SetActive(true);
     }
 
     public void HideMenu()
     {
-        if (menuObject.activeSelf)
-        {
-            menuObject.SetActive(false);
+        menuObject.SetActive(false);
 
-            //   Time.timeScale = 1;
+        Time.timeScale = 1;
 
-            ShowHUD();
-        }
+        ShowHUD();
     }
 
     private void HideHUD()
     {
         //    throw new NotImplementedException();
+        if (hudObject != null && hudObject.activeSelf)
+            hudObject.SetActive(false);
     }
 
     private void ShowHUD()
     {
+        if (hudObject != null && !hudObject.activeSelf)
+            hudObject.SetActive(true);
+
         //   throw new NotImplementedException();
     }
 

@@ -254,6 +254,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 173626071}
+  - {fileID: 1516273090}
+  - {fileID: 1193554193}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &173626070
@@ -302,7 +304,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuObject: {fileID: 204355842}
   hudObject: {fileID: 0}
-  checkStateTickRate: 1
 --- !u!1 &204355842
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,7 +522,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -455781974, guid: e24d73ba17a4aef4db83863c15863979, type: 3}
+  m_Sprite: {fileID: -1131541268, guid: d3a835833ceb51e4a8d299d77511a466, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -804,8 +805,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: OPTIONS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1dfaa51281020f944a0e3c58d327679b, type: 2}
-  m_sharedMaterial: {fileID: 6859402589978271451, guid: 1dfaa51281020f944a0e3c58d327679b,
+  m_fontAsset: {fileID: 11400000, guid: d247c5d40b3a85745949ab563672e64e, type: 2}
+  m_sharedMaterial: {fileID: -4286441681800092505, guid: d247c5d40b3a85745949ab563672e64e,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1337,6 +1338,97 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1412161098}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1193554192
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1193554193}
+  - component: {fileID: 1193554194}
+  - component: {fileID: 1193554195}
+  m_Layer: 0
+  m_Name: EventManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1193554193
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193554192}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 159526819}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1193554194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193554192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26ddd383a0396fc458ffbf018bb57463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: Listens for state manager to go into lose and then ends the game
+  Event: {fileID: 11400000, guid: 001af5aa2e92c174bbbfdc44d0e06507, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 173626072}
+        m_TargetAssemblyTypeName: SimpleGameManager, Assembly-CSharp
+        m_MethodName: EndGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1193554195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193554192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26ddd383a0396fc458ffbf018bb57463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: Listens for state manager to go into win and then restarts the game
+  Event: {fileID: 11400000, guid: 41f8c1065a955f04a89be5f681f2c562, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 173626072}
+        m_TargetAssemblyTypeName: SimpleGameManager, Assembly-CSharp
+        m_MethodName: RestartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1250707070
 GameObject:
   m_ObjectHideFlags: 0
@@ -1531,8 +1623,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: EXIT
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1dfaa51281020f944a0e3c58d327679b, type: 2}
-  m_sharedMaterial: {fileID: 6859402589978271451, guid: 1dfaa51281020f944a0e3c58d327679b,
+  m_fontAsset: {fileID: 11400000, guid: d247c5d40b3a85745949ab563672e64e, type: 2}
+  m_sharedMaterial: {fileID: -4286441681800092505, guid: d247c5d40b3a85745949ab563672e64e,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1609,6 +1701,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1418864846}
   m_CullTransparentMesh: 1
+--- !u!1 &1516273089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1516273090}
+  - component: {fileID: 1516273091}
+  m_Layer: 0
+  m_Name: StateManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1516273090
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516273089}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 159526819}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1516273091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516273089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68480c2f5137e0e4199798dd3573abbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  inventoryCollection: {fileID: 0}
+  resetConditionsOnStart: 1
+  winCondition: {fileID: 11400000, guid: 7037132748aa3584488e13f6b7eca435, type: 2}
+  loseCondition: {fileID: 11400000, guid: f5d96a2097d38de47a160fb176c449de, type: 2}
+  achievementConditions: []
+  tickRateType: 1
 --- !u!1 &1840609839
 GameObject:
   m_ObjectHideFlags: 0
@@ -1956,8 +2099,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: PLAY
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1dfaa51281020f944a0e3c58d327679b, type: 2}
-  m_sharedMaterial: {fileID: 6859402589978271451, guid: 1dfaa51281020f944a0e3c58d327679b,
+  m_fontAsset: {fileID: 11400000, guid: d247c5d40b3a85745949ab563672e64e, type: 2}
+  m_sharedMaterial: {fileID: -4286441681800092505, guid: d247c5d40b3a85745949ab563672e64e,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
