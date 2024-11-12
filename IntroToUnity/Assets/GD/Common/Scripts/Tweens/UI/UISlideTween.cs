@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace GD.Tweens
 {
+    /// <summary>
+    /// Slides a UI panel in/out of the screen
+    /// </summary>
     public class UISlideTween : UIBaseTween
     {
         [SerializeField, Tooltip("Specify the RectTransform of the UI panel that will slide in/out")]
@@ -16,11 +19,15 @@ namespace GD.Tweens
 
         protected override void InitializePanel()
         {
+            base.InitializePanel();
+
             panel.anchoredPosition = offScreenPosition;
         }
 
         protected override void Show()
         {
+            base.Show();
+
             panel.DOAnchorPos(onScreenPosition, DurationSecs)
                 .SetEase(ShowEase)
                 .SetDelay(DelaySecs)
@@ -29,6 +36,8 @@ namespace GD.Tweens
 
         protected override void Hide()
         {
+            base.Hide();
+
             panel.DOAnchorPos(offScreenPosition, DurationSecs)
                 .SetEase(HideEase)
                  .SetDelay(DelaySecs)
