@@ -11,6 +11,17 @@ namespace GD.State
     /// </summary>
     public class StateManager : MonoBehaviour, IHandleTicks
     {
+        [FoldoutGroup("Timing & Reset", expanded: true)]
+        [SerializeField]
+        [Tooltip("The tick rate type for the state manager (i.e. multiple of baseTickIntervalSecs)")]
+        private TimeTickSystem.TickRateMultiplierType tickRateType
+    = TimeTickSystem.TickRateMultiplierType.BaseInterval;
+
+        [FoldoutGroup("Timing & Reset")]
+        [SerializeField]
+        [Tooltip("Reset all conditions on start")]
+        private bool resetAllConditionsOnStart = true;
+
         [FoldoutGroup("Context", expanded: true)]
         [SerializeField]
         [Tooltip("Player reference to evaluate conditions required by the context")]
@@ -20,11 +31,6 @@ namespace GD.State
         [SerializeField]
         [Tooltip("Player inventory collection to evaluate conditions required by the context")]
         private InventoryCollection inventoryCollection;
-
-        [FoldoutGroup("Conditions", expanded: true)]
-        [SerializeField]
-        [Tooltip("Reset conditions on start")]
-        private bool resetConditionsOnStart = true;
 
         /// <summary>
         /// The condition that determines if the player wins.
@@ -42,14 +48,10 @@ namespace GD.State
         [Tooltip("The condition that determines if the player loses")]
         private ConditionBase loseCondition;
 
+        [FoldoutGroup("Achievements [optional]")]
         [SerializeField]
         [Tooltip("Set of optional conditions related to acheivements")]
         private List<ConditionBase> achievementConditions;
-
-        [SerializeField]
-        [Tooltip("The tick rate type for the state manager")]
-        private TimeTickSystem.TickRateMultiplierType tickRateType
-            = TimeTickSystem.TickRateMultiplierType.RealTime;
 
         /// <summary>
         /// Indicates whether the game has ended.
@@ -60,6 +62,12 @@ namespace GD.State
 
         private void Awake()
         {
+            if (player == null)
+                throw new System.Exception("Player reference is required!");
+
+            if (inventoryCollection == null)
+                throw new System.Exception("Inventory collection reference is required!");
+
             // Wrap the two objects inside the context envelope
             conditionContext = new ConditionContext(player, inventoryCollection);
 
@@ -75,7 +83,7 @@ namespace GD.State
 
         private void Start()
         {
-            if (resetConditionsOnStart)
+            if (resetAllConditionsOnStart)
                 ResetConditions();
         }
 
@@ -168,6 +176,16 @@ namespace GD.State
             // Reset the lose condition
             if (loseCondition != null)
                 loseCondition.ResetCondition();
+
+            // Reset the achievement conditions
+            if (achievementConditions != null)
+            {
+                foreach (var achievmentCondition in achievementConditions)
+                {
+                    if (achievmentCondition != null)
+                        achievmentCondition.ResetCondition();
+                }
+            }
         }
 
         /// <summary>
@@ -199,11 +217,12 @@ namespace GD.State
                 // enabled = false;
             }
 
+            // Evaluate the achievement conditions
             foreach (var achievmentCondition in achievementConditions)
             {
                 if (achievmentCondition != null && achievmentCondition.Evaluate(conditionContext))
                 {
-                    //do something
+                    //do something here
                 }
             }
         }

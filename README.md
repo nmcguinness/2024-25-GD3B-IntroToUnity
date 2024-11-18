@@ -25,12 +25,5 @@ elements (events, states, animation, input) for this module.
 | Example 2 - Scriptable Objects | Sharing variables across multiple game objects using ScriptableObjects (SOs) | See RotationBehaviour and Variables in Common/Scripts/ScriptableObjects |
 | Example 3 - Selection Manager - Simple | Writing a better SelectionManager using Design Patterns (Abstract Factory, Strategy) | See SelectionManager and SimpleSelectionManager |
 
-### To Do - Week 3 - 4
-- [x] Add Editor tools (inspector lock, folder generation)
-- [ ] Scriptable Objects - Add a demo to demonstrate a centrally modified game variable
-- [ ] Discuss generic classes - see [Intro to C#](https://github.com/nmcguinness/2024_25---GD---CSharp---Intro.git)
-- [ ] Scriptable Objects - Add a local/remote reference variable demo
-- [ ] Scriptable Objects - Add a framework for interactable, consumable, game, and level data
-- [ ] Add a SimpleSelectionManager as a starting point to discuss Abstract Factory and Strategy patterns
-- [ ] Apply Abstract Factory and Strategy patterns to make an improved SelectionManager
-   
+## Design Patterns & SOLID
+- [Gizmo Drawer](Reading/Gizmo%20Framework.md)

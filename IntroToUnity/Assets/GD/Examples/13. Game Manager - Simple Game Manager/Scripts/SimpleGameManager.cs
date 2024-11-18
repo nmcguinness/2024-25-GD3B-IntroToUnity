@@ -13,9 +13,6 @@ public class SimpleGameManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        // Register with the tick system
-        //  TimeTickSystem.Instance.RegisterListener(checkStateTickRate, HandleTick);
-
         // Show main menu
         ShowMenu();
 
@@ -23,34 +20,32 @@ public class SimpleGameManager : MonoBehaviour
         StartGame();
     }
 
-    private void OnDestroy()
-    {
-        //  TimeTickSystem.Instance.UnregisterListener(checkStateTickRate, HandleTick);
-    }
-
     public void StartGame()
     {
-        //postion player
-        //event to InventoryManager
-        //countdown to ToastManager
+        //set player stats and position
+
+        //set InventoryManager
+
+        //enable countdown in ToastManager
+
         //enable input control
     }
 
     public void RestartGame()
     {
-        //reset the player stats
+        //do some cleanup
 
-        //reset the camera
-
-        //re-spawn enemies
+        StartGame();
     }
 
-    public void EndGame()
+    public void WinGame()
     {
-        //countdown to ToastManager
-        //disable input control
-        //play animation
-        //reset
+        //do win type stuff
+    }
+
+    public void LoseGame()
+    {
+        //do lose type stuff
     }
 
     // Update is called once per frame
