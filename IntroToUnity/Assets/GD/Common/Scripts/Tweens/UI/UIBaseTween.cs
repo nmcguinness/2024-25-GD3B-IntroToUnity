@@ -1,7 +1,6 @@
 using DG.Tweening;
 using GD.Types;
 using Sirenix.OdinInspector;
-using Sirenix.OdinInspector.Editor.StateUpdaters;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -27,8 +26,8 @@ namespace GD.Tweens
         protected UnityEvent onComplete;
 
         [SerializeField, ReadOnly]
-        [PropertyOrder(30)]
-        protected VisibilityState visibilityState = VisibilityState.Hidden;
+        [PropertyOrder(-1)]
+        protected VisibilityState visibilityState = VisibilityState.Start;
 
         #endregion Fields
 
@@ -56,15 +55,15 @@ namespace GD.Tweens
 
         public void TogglePanel()
         {
-            if (visibilityState == VisibilityState.Visible)
+            if (visibilityState == VisibilityState.End)
                 Hide();
-            else if (visibilityState == VisibilityState.Hidden)
+            else if (visibilityState == VisibilityState.Start)
                 Show();
         }
 
         protected virtual void InitializePanel()
         {
-            visibilityState = VisibilityState.Hidden;
+            visibilityState = VisibilityState.Start;
         }
 
         protected virtual void Show()
@@ -80,9 +79,9 @@ namespace GD.Tweens
         protected virtual void TweenComplete()
         {
             if (visibilityState == VisibilityState.Showing)
-                visibilityState = VisibilityState.Visible;
+                visibilityState = VisibilityState.End;
             else if (visibilityState == VisibilityState.Hiding)
-                visibilityState = VisibilityState.Hidden;
+                visibilityState = VisibilityState.Start;
 
             onComplete?.Invoke();
         }

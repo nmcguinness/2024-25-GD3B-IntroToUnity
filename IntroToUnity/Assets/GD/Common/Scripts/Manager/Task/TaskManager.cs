@@ -11,7 +11,7 @@ namespace GD.Tasks
     /// It allows you to assign tasks via the Inspector, provides runtime control, and displays
     /// detailed runtime information about active tasks.
     /// </summary>
-    public class TaskManager : Singleton<TaskManager>
+    public class TaskManager : MonoBehaviour
     {
         [FoldoutGroup("Context", expanded: true)]
         [SerializeField]
@@ -26,7 +26,7 @@ namespace GD.Tasks
         // Settings foldout group for task configuration
         [FoldoutGroup("Tasks")]
         [Tooltip("List of Tasks to schedule at startup. Drag and drop Task assets here.")]
-        public List<Task> taskList;
+        public List<Task> taskList = new List<Task>();
 
         // Runtime Info foldout group for displaying active tasks
         [FoldoutGroup("Runtime Info"), ShowInInspector, ReadOnly, LabelText("Active Tasks Count")]
@@ -79,12 +79,6 @@ namespace GD.Tasks
         {
             // Initialize the TaskContext with required dependencies
             taskContext = new TaskContext(player, inventoryCollection);
-
-            // If the coroutine is not running, start it
-            if (taskCoroutine == null)
-            {
-                taskCoroutine = StartCoroutine(TaskRunner());
-            }
         }
 
         /// <summary>
@@ -107,6 +101,12 @@ namespace GD.Tasks
 
                 // Indicate that the task list has changed
                 taskListChanged = true;
+
+                // If the coroutine is not running, start it
+                if (taskCoroutine == null)
+                {
+                    taskCoroutine = StartCoroutine(TaskRunner());
+                }
             }
         }
 

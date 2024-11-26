@@ -1,7 +1,8 @@
-﻿using GD.Events;
-using GD.Types;
+﻿using UnityEngine;
+using UnityEngine.Events;
 using Sirenix.OdinInspector;
-using UnityEngine;
+using GD.Types;
+using GD.Events;
 
 namespace GD.Tasks
 {
@@ -9,7 +10,8 @@ namespace GD.Tasks
     /// <b>Task</b> represents a scheduled task that can be executed by the <see cref="TaskManager"/>.
     /// It supports delayed execution, repetition, and events for start and completion.
     /// </summary>
-    public abstract class Task : ScriptableGameObject
+    [CreateAssetMenu(fileName = "Task", menuName = "GD/Tasks/Task")]
+    public class Task : ScriptableGameObject
     {
         #region Fields
 
