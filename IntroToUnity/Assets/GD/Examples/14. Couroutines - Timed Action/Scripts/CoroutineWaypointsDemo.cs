@@ -54,11 +54,16 @@ public class CoroutineWaypointDemo : MonoBehaviour
                 yield return null; // Wait for the next frame
             }
 
-            // Wait for the specified delay
+            // Wait for the specified delay when reaching the waypoint
             yield return new WaitForSeconds(delay);
 
             // Move to the next waypoint (loop back to the start if necessary)
             currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
         }
+    }
+
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
     }
 }

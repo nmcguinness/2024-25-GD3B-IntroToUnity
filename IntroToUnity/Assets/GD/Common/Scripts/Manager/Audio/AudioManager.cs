@@ -56,7 +56,8 @@ namespace GD.Audio
             base.Awake();
 
             // Initialize the AudioSource pool
-            audioSourcePool = new ObjectPool<AudioSource>(audioSourcePrefab, initialPoolSize, transform);
+            audioSourcePool = new ObjectPool<AudioSource>(audioSourcePrefab,
+                initialPoolSize);
         }
 
         /// <summary>

@@ -53,6 +53,8 @@ namespace GD.Pool
         /// <param name="obj">The object to return.</param>
         public void ReturnToPool(T obj)
         {
+            // TODO - Reset the object?
+
             obj.gameObject.SetActive(false);
             pool.Enqueue(obj);
         }

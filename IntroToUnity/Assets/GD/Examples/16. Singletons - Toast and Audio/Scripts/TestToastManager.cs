@@ -1,4 +1,5 @@
-﻿using GD.Toast;
+﻿using GD.Audio;
+using GD.Toast;
 using UnityEngine;
 
 public class TestToastManager : MonoBehaviour
